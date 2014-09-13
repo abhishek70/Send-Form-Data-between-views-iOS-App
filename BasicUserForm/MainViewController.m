@@ -65,6 +65,9 @@
 
 }
 
+/*
+ * Function for sending data to another view controller
+ */
 - (IBAction)sendData:(id)sender {
     DetailViewController *detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:[NSBundle mainBundle]];
     [self.navigationController pushViewController:detailViewController animated:true];
@@ -80,12 +83,18 @@
     
 }
 
+/*
+ * Function for clearing the data
+ */
 - (IBAction)clearData:(id)sender {
     name.text = @"";
     email.text = @"";
     gender.selected = false;
 }
 
+/*
+ * Function for capturing the drop down selected value
+ */
 - (IBAction)indexChanged:(id)sender {
     
     switch (gender.selectedSegmentIndex)
@@ -102,6 +111,9 @@
     }
 }
 
+/*
+ * Function for hiding the keyboard
+ */
 -(BOOL) textFieldShouldReturn:(UITextField *)textField {
     if(textField == self.name) {
         [self.name resignFirstResponder];
